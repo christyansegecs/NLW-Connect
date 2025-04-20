@@ -1,0 +1,5 @@
+
+npx create-next-app@latest --empty
+npm install tailwindcss @tailwindcss/postcss postcss
+npm i @biomejs/biome -D
+npx @biomejs/biome init
