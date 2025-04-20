@@ -16,3 +16,11 @@ nvm install 22.0.0
 nvm use 22.0.0
 
 npm i @biomejs/biome -D
+
+docker compose up -d
+npm i ioredis
+npm i postgres drizzle-orm
+npm i drizzle-kit -D
+
+npx drizzle-kit generate
+npx drizzle-kit migrate
