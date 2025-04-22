@@ -3,3 +3,6 @@ npx create-next-app@latest --empty
 npm install tailwindcss @tailwindcss/postcss postcss
 npm i @biomejs/biome -D
 npx @biomejs/biome init
+npm i tailwind-merge
+npm i react-hook-form
+npm i zod @hookform/resolvers
