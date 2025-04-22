@@ -10,6 +10,10 @@ import {
 } from 'fastify-type-provider-zod'
 import { env } from './env'
 import { accessInviteLinkRoute } from './routes/access-invite-link-route'
+import { getRankingRoute } from './routes/get-ranking-route'
+import { getSubscriberInviteClicksRoute } from './routes/get-subscriber-invites-clicks-route'
+import { getSubscriberInvitesCountRoute } from './routes/get-subscriber-invites-count-route'
+import { getSubscriberRankingPositionRoute } from './routes/get-subscriber-ranking-position'
 import { subscribeToEventRoute } from './routes/subscribe-to-event-route'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
@@ -17,10 +21,6 @@ const app = fastify().withTypeProvider<ZodTypeProvider>()
 app.setSerializerCompiler(serializerCompiler)
 app.setValidatorCompiler(validatorCompiler)
 
-//app.register(fastifyCors, {
-//    origin: true,
-//    origin: ['http://localhost:3000', 'https://example.com'],
-//})
 app.register(fastifyCors)
 
 app.register(fastifySwagger, {
@@ -44,6 +44,11 @@ app.register(accessInviteLinkRoute)
 app.get('/hello', () => {
   return 'Hello World!'
 })
+
+app.register(getSubscriberInviteClicksRoute)
+app.register(getSubscriberInvitesCountRoute)
+app.register(getSubscriberRankingPositionRoute)
+app.register(getRankingRoute)
 
 app.listen({ port: env.PORT }).then(() => {
   console.log('HTTP server running!')

@@ -1,12 +1,24 @@
-
 POST http://localhost:3333/subscriptions
-Content-Type:  application/json
+Content-Type: application/json
 
 {
-    "name": "Christi",
-    "email": "chrisa@gmail.com"
+  "name": "Chrisão",
+  "email": "diego1@rocketseat.com.br",
+  "invite_code": "f6527a6a-bc4c-43bc-80b4-6c1ab4594f30"
 }
 
-###
+####
 
-GET http://localhost:3333/invites/chris123
+GET http://localhost:3333/invites/f6527a6a-bc4c-43bc-80b4-6c1ab4594f30
+####
+
+GET http://localhost:3333/subscribers/f6527a6a-bc4c-43bc-80b4-6c1ab4594f30/ranking/clicks
+
+####
+GET http://localhost:3333/subscribers/f6527a6a-bc4c-43bc-80b4-6c1ab4594f30/ranking/count
+
+####
+GET http://localhost:3333/subscribers/f6527a6a-bc4c-43bc-80b4-6c1ab4594f30/ranking/position
+
+####
+GET http://localhost:3333/ranking

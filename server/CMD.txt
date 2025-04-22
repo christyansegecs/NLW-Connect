@@ -24,3 +24,9 @@ npm i drizzle-kit -D
 
 npx drizzle-kit generate
 npx drizzle-kit migrate
+
+npm i tsup -D
+
+npm run build
+node dist/server.mjs
+node --env-file .env dist/server.mjs
